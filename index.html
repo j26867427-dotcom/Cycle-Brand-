@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cycle Brand India - Premium Indian Bicycles & Expert Service Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#f97316', // Indian Saffron accent
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            900: '#7c2d12',
+                        },
+                        emeraldTheme: {
+                            600: '#059669',
+                            700: '#047857',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .zoom-container {
+            overflow: hidden;
+            position: relative;
+            cursor: zoom-in;
+        }
+        .zoom-img {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-slate-900 text-slate-200 text-xs py-2 px-4 text-center font-medium">
+        🎉 Free Home Delivery Across India on Orders Above ₹5,000 | 24/7 Expert Support & Doorstep Repair 
+    </div>
+
+    <!-- HEADER & NAVBAR -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 bg-gradient-to-tr from-brand-600 to-amber-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform">
+                    <i data-lucide="bike" class="w-7 h-7"></i>
+                </div>
+                <div>
+                    <span class="text-2xl font-extrabold tracking-tight text-slate-900">CYCLE<span class="text-brand-600">BRAND</span></span>
+                    <span class="block text-xs font-semibold text-slate-500 tracking-wider uppercase">India's Trusted Cycle Hub</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600">
+                <a href="#home" class="hover:text-brand-600 transition-colors">Home</a>
+                <a href="#shop" class="hover:text-brand-600 transition-colors">Indian Cycles & Models</a>
+                <a href="#repair" class="hover:text-brand-600 transition-colors">Complete Repair Center</a>
+                <a href="#about" class="hover:text-brand-600 transition-colors">About Us</a>
+                <a href="#contact" class="hover:text-brand-600 transition-colors">Contact</a>
+            </nav>
+
+            <!-- Cart & Mobile Menu Action -->
+            <div class="flex items-center gap-4">
+                <button onclick="toggleCart()" class="relative p-3 rounded-xl bg-slate-100 hover:bg-brand-50 hover:text-brand-600 text-slate-700 transition-colors flex items-center gap-2">
+                    <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                    <span class="hidden sm:inline font-semibold text-sm">Cart</span>
+                    <span id="cart-badge" class="absolute -top-1.5 -right-1.5 bg-brand-600 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shadow-md scale-0 transition-transform duration-300">0</span>
+                </button>
+
+                <button onclick="toggleMobileMenu()" class="md:hidden p-3 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-3 shadow-lg">
+            <a href="#home" onclick="toggleMobileMenu()" class="block font-medium text-slate-700 hover:text-brand-600 py-1">Home</a>
+            <a href="#shop" onclick="toggleMobileMenu()" class="block font-medium text-slate-700 hover:text-brand-600 py-1">Indian Cycles & Models</a>
+            <a href="#repair" onclick="toggleMobileMenu()" class="block font-medium text-slate-700 hover:text-brand-600 py-1">Complete Repair Center</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block font-medium text-slate-700 hover:text-brand-600 py-1">About Us</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block font-medium text-slate-700 hover:text-brand-600 py-1">Contact</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative bg-gradient-to-br from-slate-900 via-slate-800 to-amber-950 text-white overflow-hidden py-20 lg:py-32">
+        <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#f97316_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6 text-center lg:text-left">
+                <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-500/20 border border-brand-500/30 text-brand-300 text-sm font-semibold tracking-wide uppercase">
+                    <i data-lucide="flame" class="w-4 h-4 text-brand-500"></i> Best Indian Brands & Models 2026
+                </span>
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
+                    Ride India's Finest Cycles With <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-amber-300">Cycle Brand</span>
+                </h1>
+                <p class="text-lg text-slate-300 max-w-xl mx-auto lg:mx-0">
+                    Explore top Indian models from Hero, Firefox, Avon, Hercules, BSA Ladybird, Stryder, and Ninety One. Complete with multi-angle photos, zoom inspection, and professional doorstep repair services.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                    <a href="#shop" class="px-8 py-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold shadow-lg shadow-brand-600/40 hover:scale-105 transition-all flex items-center justify-center gap-2">
+                        Explore Indian Cycles <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#repair" class="px-8 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-bold transition-all flex items-center justify-center gap-2">
+                        Book Cycle Repair <i data-lucide="wrench" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="relative flex justify-center">
+                <div class="absolute w-72 h-72 sm:w-96 sm:h-96 bg-brand-500/20 rounded-full blur-3xl -z-10"></div>
+                <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80" alt="Hero & Firefox Cycles India" class="rounded-3xl shadow-2xl border-4 border-slate-700/50 max-h-[420px] object-cover transform hover:scale-105 transition-transform duration-500">
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BADGES -->
+    <section class="bg-white border-b border-slate-200 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+                <div class="text-3xl font-extrabold text-brand-600">7+</div>
+                <div class="text-sm font-medium text-slate-600 mt-1">Top Indian Brands</div>
+            </div>
+            <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+                <div class="text-3xl font-extrabold text-brand-600">Multi-Angle</div>
+                <div class="text-sm font-medium text-slate-600 mt-1">HD Photo Inspection</div>
+            </div>
+            <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+                <div class="text-3xl font-extrabold text-brand-600">Full Repair</div>
+                <div class="text-sm font-medium text-slate-600 mt-1">All Cycle Repairs & Spares</div>
+            </div>
+            <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+                <div class="text-3xl font-extrabold text-brand-600">COD / UPI</div>
+                <div class="text-sm font-medium text-slate-600 mt-1">Secure Indian Payments</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHOP / CATALOG SECTION -->
+    <section id="shop" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+                <span class="text-brand-600 font-bold uppercase tracking-wider text-sm">Indian Collections</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1">Choose Your Indian Cycle Model</h2>
+            </div>
+            <div class="mt-6 md:mt-0 flex flex-col sm:flex-row gap-4">
+                <div class="relative">
+                    <i data-lucide="search" class="w-5 h-5 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input type="text" id="search-input" oninput="filterProducts()" placeholder="Search Hero, Firefox, Avon..." class="w-full sm:w-64 pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm">
+                </div>
+            </div>
+        </div>
+
+        <!-- Brand Filter Tabs -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none" id="brand-filters">
+            <button onclick="filterBrand('all')" class="brand-btn px-5 py-2.5 rounded-xl font-semibold text-sm whitespace-nowrap bg-brand-600 text-white shadow-md shadow-brand-600/20 transition-all">All Indian Brands</button>
+            <button onclick="filterBrand('Hero')" class="brand-btn px-5 py-2.5 rounded-xl font-semibold text-sm whitespace-nowrap bg-white text-slate-700 border border-slate-200 hover:border-brand-500 transition-all">Hero Cycles</button>
+            <button onclick="filterBrand('Firefox')" class="brand-btn px-5 py-2.5 rounded-xl font-semibold text-sm whitespace-nowrap bg-white text-slate-700 border border-slate-200 hover:border-brand-500 transition-all">Firefox</button>
+            <button onclick="filterBrand('Avon')" class="brand-btn px-5 py-2.5 rounded-xl font-semibold text-sm whitespace-nowrap bg-white text-slate-700 border border-slate-200 hover:border-brand-500 transition-all">Avon Cycles</button>
+            <button onclick="filterBrand('Hercules')" class="brand-btn px-5 py-2.5 rounded-xl font-semibold text-sm whitespace-nowrap bg-white text-slate-700 border border-slate-200 hover:border-brand-500 transition-all">Hercules Roadeo</button>
+            <button onclick="filterBrand('BSA')" class="brand-btn px-5 py-2.5 rounded-xl font-semibold text-sm whitespace-nowrap bg-white text-slate-700 border border-slate-200 hover:border-brand-500 transition-all">BSA Ladybird</button>
+            <button onclick="filterBrand('Stryder')" class="brand-btn px-5 py-2.5 rounded-xl font-semibold text-sm whitespace-nowrap bg-white text-slate-700 border border-slate-200 hover:border-brand-500 transition-all">Stryder</button>
+            <button onclick="filterBrand('Ninety One')" class="brand-btn px-5 py-2.5 rounded-xl font-semibold text-sm whitespace-nowrap bg-white text-slate-700 border border-slate-200 hover:border-brand-500 transition-all">Ninety One</button>
+        </div>
+
+        <!-- Product Grid -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Populated by JS -->
+        </div>
+    </section>
+
+    <!-- COMPLETE CYCLE REPAIR & SERVICE CENTER SECTION -->
+    <section id="repair" class="bg-slate-900 text-white py-20 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#f97316_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-400 font-bold uppercase tracking-wider text-sm">Professional Workshop</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-2">All Cycle Repair & Service Center</h2>
+                <p class="text-slate-400 mt-3">We repair all types of cycles — Geared bicycles, Mountain bikes, Kids cycles, Road bikes, and Electric cycles with genuine Indian spare parts.</p>
+            </div>
+
+            <!-- Repair Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-slate-800/80 border border-slate-700 rounded-3xl p-8 hover:border-brand-500 transition-all">
+                    <div class="w-14 h-14 bg-brand-500/20 text-brand-400 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="wrench" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">General Tune-Up & Check</h3>
+                    <p class="text-slate-400 text-sm mb-4">Complete bolt tightening, brake adjustment, gear tuning, chain oiling, and tire pressure check for all Indian models.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-brand-400 font-extrabold text-lg">₹399</span>
+                        <span class="text-xs bg-slate-700 px-3 py-1 rounded-full text-slate-300">Est. 45 Mins</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/80 border border-slate-700 rounded-3xl p-8 hover:border-brand-500 transition-all">
+                    <div class="w-14 h-14 bg-brand-500/20 text-brand-400 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="disc" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Flat Tire & Tube Replacement</h3>
+                    <p class="text-slate-400 text-sm mb-4">Quick puncture repair or brand new heavy-duty inner tube installation for Hero, Avon, Hercules, and all tyre sizes.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-brand-400 font-extrabold text-lg">₹149</span>
+                        <span class="text-xs bg-slate-700 px-3 py-1 rounded-full text-slate-300">Est. 20 Mins</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/80 border border-slate-700 rounded-3xl p-8 hover:border-brand-500 transition-all">
+                    <div class="w-14 h-14 bg-brand-500/20 text-brand-400 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="shield-check" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Full Overhaul & Deep Wash</h3>
+                    <p class="text-slate-400 text-sm mb-4">Complete dismantling, degreasing, bearing re-greasing, wheel truing, cable replacement, and brand-new shine.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-brand-400 font-extrabold text-lg">₹999</span>
+                        <span class="text-xs bg-slate-700 px-3 py-1 rounded-full text-slate-300">Est. 3 Hours</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repair Booking Form -->
+            <div class="bg-gradient-to-r from-brand-700 to-amber-800 rounded-3xl p-8 sm:p-12 max-w-4xl mx-auto shadow-2xl">
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-2 text-center">Book Cycle Repair Service</h3>
+                <p class="text-orange-100 text-center text-sm mb-8">Choose walk-in workshop drop or doorstep pickup for your cycle repair.</p>
+                <form id="service-form" onsubmit="handleServiceBooking(event)" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-orange-100 mb-2">Your Full Name</label>
+                        <input type="text" id="service-name" required placeholder="Enter name" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-orange-500/40 text-white placeholder-orange-200/60 focus:outline-none focus:ring-2 focus:ring-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-orange-100 mb-2">Phone Number</label>
+                        <input type="tel" id="service-phone" required placeholder="10-digit mobile number" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-orange-500/40 text-white placeholder-orange-200/60 focus:outline-none focus:ring-2 focus:ring-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-orange-100 mb-2">Select Repair Service</label>
+                        <select id="service-type" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-orange-500/40 text-white focus:outline-none focus:ring-2 focus:ring-white">
+                            <option value="General Tune-Up">General Tune-Up & Check (₹399)</option>
+                            <option value="Flat Tire & Tube Replacement">Flat Tire & Tube Replacement (₹149)</option>
+                            <option value="Full Overhaul & Deep Wash">Full Overhaul & Deep Wash (₹999)</option>
+                            <option value="Gear & Brake Adjustment">Gear & Brake Tuning (₹249)</option>
+                            <option value="Chain & Sprocket Replacement">Chain & Sprocket Replacement (₹499)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-orange-100 mb-2">Service Mode</label>
+                        <select id="service-mode" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-orange-500/40 text-white focus:outline-none focus:ring-2 focus:ring-white">
+                            <option value="Doorstep Home Pickup & Drop">Doorstep Home Pickup & Drop</option>
+                            <option value="Walk-in Shop Workshop">Walk-in Shop Workshop</option>
+                        </select>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label class="block text-sm font-medium text-orange-100 mb-2">Describe Cycle Issue / Brand / Model</label>
+                        <textarea id="service-issue" rows="2" placeholder="e.g. Hero Sprint gears not shifting properly, or flat back tyre" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-orange-500/40 text-white placeholder-orange-200/60 focus:outline-none focus:ring-2 focus:ring-white"></textarea>
+                    </div>
+                    <div class="sm:col-span-2 text-center mt-2">
+                        <button type="submit" class="px-8 py-4 bg-white text-orange-900 font-extrabold rounded-xl hover:bg-orange-50 shadow-lg transition-all">Confirm Repair Booking</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section id="about" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-brand-600 font-bold uppercase tracking-wider text-sm">About Cycle Brand India</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Serving Indian Riders With Quality & Trust</h2>
+                <p class="text-slate-600 mt-4 leading-relaxed">
+                    Cycle Brand is India's dedicated destination for authentic bicycles and professional service. We partner directly with legendary Indian manufacturers like Hero Cycles, Avon, Hercules, and modern gear innovators like Firefox, Stryder, and Ninety One. Every cycle comes with verified warranty, doorstep assembly support, and genuine spare parts availability.
+                </p>
+                <div class="grid grid-cols-2 gap-6 mt-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center font-bold">✓</div>
+                        <span class="font-semibold text-slate-800">100% Original Indian Brands</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center font-bold">✓</div>
+                        <span class="font-semibold text-slate-800">Expert Mechanics</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?auto=format&fit=crop&w=800&q=80" alt="Cycle Showroom India" class="rounded-3xl shadow-2xl object-cover h-[400px] w-full">
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div class="space-y-4">
+                <div class="flex items-center gap-3 text-white">
+                    <div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center text-white font-bold">
+                        <i data-lucide="bike" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xl font-extrabold tracking-tight">CYCLE BRAND INDIA</span>
+                </div>
+                <p class="text-sm">Providing top-quality Indian bicycles, multi-angle view inspections, and professional repair workshops.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#home" class="hover:text-brand-400 transition-colors">Home</a></li>
+                    <li><a href="#shop" class="hover:text-brand-400 transition-colors">Indian Cycles & Models</a></li>
+                    <li><a href="#repair" class="hover:text-brand-400 transition-colors">Repair & Service Center</a></li>
+                    <li><a href="#about" class="hover:text-brand-400 transition-colors">About Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Popular Brands</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#shop" onclick="filterBrand('Hero')" class="hover:text-brand-400 transition-colors">Hero Sprint & Cycles</a></li>
+                    <li><a href="#shop" onclick="filterBrand('Firefox')" class="hover:text-brand-400 transition-colors">Firefox Bikes</a></li>
+                    <li><a href="#shop" onclick="filterBrand('Avon')" class="hover:text-brand-400 transition-colors">Avon Cycles</a></li>
+                    <li><a href="#shop" onclick="filterBrand('Hercules')" class="hover:text-brand-400 transition-colors">Hercules Roadeo</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Shop & Workshop</h4>
+                <p class="text-sm mb-2"><i data-lucide="map-pin" class="w-4 h-4 inline mr-2 text-brand-400"></i> Main Cycle Market, Station Road, India</p>
+                <p class="text-sm mb-2"><i data-lucide="phone" class="w-4 h-4 inline mr-2 text-brand-400"></i> +91 98765 43210</p>
+                <p class="text-sm"><i data-lucide="mail" class="w-4 h-4 inline mr-2 text-brand-400"></i> support@cyclebrandindia.com</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+            &copy; 2026 Cycle Brand India. All rights reserved. Built for Indian riders.
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE CYCLE DETAIL MODAL (MULTI-ANGLE & ZOOM IN/OUT) -->
+    <div id="product-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-4xl w-full p-6 sm:p-8 relative shadow-2xl animate-in fade-in zoom-in duration-200" id="modal-content">
+            <button onclick="closeProductModal()" class="absolute top-4 right-4 p-2.5 bg-slate-100 hover:bg-slate-200 rounded-full text-slate-700 z-10">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div id="modal-body">
+                <!-- Dynamically Populated with multi-angle gallery and zoom controls -->
+            </div>
+        </div>
+    </div>
+
+    <!-- CART DRAWER -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex justify-end">
+        <div class="bg-white w-full max-w-md h-full flex flex-col shadow-2xl transform transition-transform duration-300">
+            <div class="p-6 border-b border-slate-200 flex items-center justify-between">
+                <h3 class="text-xl font-extrabold text-slate-900 flex items-center gap-2">
+                    <i data-lucide="shopping-bag" class="w-6 h-6 text-brand-600"></i> Shopping Cart
+                </h3>
+                <button onclick="toggleCart()" class="p-2 hover:bg-slate-100 rounded-full text-slate-700">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            
+            <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4">
+                <!-- Cart items list -->
+            </div>
+
+            <div class="p-6 border-t border-slate-200 bg-slate-50">
+                <div class="flex justify-between font-bold text-lg mb-4 text-slate-900">
+                    <span>Total Amount:</span>
+                    <span id="cart-total" class="text-brand-600">₹0</span>
+                </div>
+                <button onclick="openCheckoutModal()" class="w-full py-4 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl shadow-lg shadow-brand-600/30 transition-all flex items-center justify-center gap-2">
+                    Proceed to Checkout <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHECKOUT MODAL -->
+    <div id="checkout-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl">
+            <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 p-2 bg-slate-100 hover:bg-slate-200 rounded-full text-slate-700">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <h3 class="text-2xl font-extrabold text-slate-900 mb-2">Indian Checkout & Order</h3>
+            <p class="text-slate-500 text-sm mb-6">Enter your delivery address and payment method.</p>
+
+            <form id="order-form" onsubmit="submitOrder(event)" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
+                    <input type="text" id="cust-name" required placeholder="Enter full name" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Mobile Number (WhatsApp/Call)</label>
+                    <input type="tel" id="cust-phone" required placeholder="+91 98765 43210" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Delivery Address (Pin Code, City, State)</label>
+                    <textarea id="cust-address" rows="3" required placeholder="House No, Street, City, Pin Code" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm"></textarea>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Payment Method</label>
+                    <select id="cust-payment" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm">
+                        <option value="Cash on Delivery (COD)">Cash on Delivery (COD)</option>
+                        <option value="UPI (GPay / PhonePe / Paytm)">UPI (Google Pay / PhonePe / Paytm QR)</option>
+                        <option value="Net Banking / Credit Card">Net Banking / Credit / Debit Card</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full py-4 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl shadow-lg shadow-brand-600/30 transition-all mt-4">Place Order Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- SUCCESS CONFIRMATION MODAL -->
+    <div id="confirmation-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-8 text-center shadow-2xl">
+            <div class="w-16 h-16 bg-brand-100 text-brand-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl font-bold shadow-inner">
+                ✓
+            </div>
+            <h3 class="text-2xl font-extrabold text-slate-900 mb-2">Request / Order Confirmed!</h3>
+            <p id="order-success-msg" class="text-slate-600 text-sm mb-6">Your order has been successfully placed with Cycle Brand India.</p>
+            <button onclick="closeConfirmation()" class="w-full py-3.5 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl shadow-lg transition-all">Back to Home</button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Indian Cycle Products with Multi-Angle Photos & Specs
+        const products = [
+            {
+                id: 1,
+                name: "Hero Sprint Pro Rotor 29T",
+                brand: "Hero",
+                category: "Mountain Bike (MTB)",
+                price: 15499,
+                rating: 4.8,
+                images: {
+                    side: "https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?auto=format&fit=crop&w=800&q=80",
+                    front: "https://images.unsplash.com/photo-1511994298241-608e28f14fde?auto=format&fit=crop&w=800&q=80",
+                    cockpit: "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&w=800&q=80",
+                    gear: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80"
+                },
+                description: "Hero's flagship mountain bike designed for rugged Indian terrain. Features 21-speed Shimano gearing, dual disc brakes, and rugged 29-inch double-wall alloy wheels.",
+                specs: { Frame: "18.5 inch High Tensile Steel", Gears: "21-Speed Shimano Tourney", Brakes: "Dual Mechanical Disc", Wheels: "29 Inch Alloy", Suspension: "Front Zoom Fork" }
+            },
+            {
+                id: 2,
+                name: "Firefox Rapide 21S Hybrid",
+                brand: "Firefox",
+                category: "Fitness & City Hybrid",
+                price: 19999,
+                rating: 4.9,
+                images: {
+                    side: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80",
+                    front: "https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?auto=format&fit=crop&w=800&q=80",
+                    cockpit: "https://images.unsplash.com/photo-1511994298241-608e28f14fde?auto=format&fit=crop&w=800&q=80",
+                    gear: "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&w=800&q=80"
+                },
+                description: "Lightweight aluminum frame hybrid cycle by Firefox. Perfect for city commuting and morning fitness rides across Indian roads.",
+                specs: { Frame: "Alloy 6061 Lightweight", Gears: "21-Speed Shimano EZ-Fire", Brakes: "Alloy V-Brakes / Disc", Wheels: "700C Double Wall", Suspension: "Rigid Alloy Fork" }
+            },
+            {
+                id: 3,
+                name: "Avon Dirt Rider 27.5T",
+                brand: "Avon",
+                category: "Mountain MTB",
+                price: 13499,
+                rating: 4.6,
+                images: {
+                    side: "https://images.unsplash.com/photo-1511994298241-608e28f14fde?auto=format&fit=crop&w=800&q=80",
+                    front: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80",
+                    cockpit: "https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?auto=format&fit=crop&w=800&q=80",
+                    gear: "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&w=800&q=80"
+                },
+                description: "Popular Avon model built for teenagers and adults. Stylish graphics, powerful disc brakes, and comfortable saddle.",
+                specs: { Frame: "Ergonomic Steel Frame", Gears: "18-Speed Shimano", Brakes: "Front & Rear Disc Brakes", Wheels: "27.5 Inch Nylon Tyres", Suspension: "Front Suspension" }
+            },
+            {
+                id: 4,
+                name: "Hercules Roadeo A/T 100",
+                brand: "Hercules",
+                category: "Youth / MTB",
+                price: 11999,
+                rating: 4.7,
+                images: {
+                    side: "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&w=800&q=80",
+                    front: "https://images.unsplash.com/photo-1511994298241-608e28f14fde?auto=format&fit=crop&w=800&q=80",
+                    cockpit: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80",
+                    gear: "https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?auto=format&fit=crop&w=800&q=80"
+                },
+                description: "Hercules Roadeo is the absolute favorite youth bike in India. Aggressive styling, dual suspension, and high-traction tyres.",
+                specs: { Frame: "Robust Steel MTB Frame", Gears: "6-Speed Shimano Shifters", Brakes: "Power V-Brakes", Wheels: "26 Inch x 2.10", Suspension: "Dual Suspension" }
+            },
+            {
+                id: 5,
+                name: "BSA Ladybird Daisy 26T",
+                brand: "BSA",
+                category: "Girls / City Cycle",
+                price: 8999,
+                rating: 4.8,
+                images: {
+                    side: "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?auto=format&fit=crop&w=800&q=80",
+                    front: "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&w=800&q=80",
+                    cockpit: "https://images.unsplash.com/photo-1511994298241-608e28f14fde?auto=format&fit=crop&w=800&q=80",
+                    gear: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80"
+                },
+                description: "Classic BSA Ladybird with charming floral basket, cushioned rear carrier, and comfortable posture for young girls and women.",
+                specs: { Frame: "Low-Step Designer Frame", Gears: "Single Speed", Brakes: "Caliper Brakes", Wheels: "26 Inch", Extras: "Front Basket & Carrier" }
+            },
+            {
+                id: 6,
+                name: "Stryder Zephyr 27.5T",
+                brand: "Stryder",
+                category: "Mountain MTB",
+                price: 12499,
+                rating: 4.7,
+                images: {
+                    side: "https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?auto=format&fit=crop&w=800&q=80",
+                    front: "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?auto=format&fit=crop&w=800&q=80",
+                    cockpit: "https://images.unsplash.com/photo-1511994298241-608e28f14fde?auto=format&fit=crop&w=800&q=80",
+                    gear: "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&w=800&q=80"
+                },
+                description: "Stryder (a Tata enterprise brand) brings unmatched reliability. The Zephyr 27.5T features sleek matte paint and robust build quality.",
+                specs: { Frame: "Steel MTB Frame", Gears: "21-Speed Shimano", Brakes: "Disc Brakes", Wheels: "27.5 Inch Alloy", Suspension: "Suspension Fork" }
+            },
+            {
+                id: 7,
+                name: "Ninety One Viper 29T",
+                brand: "Ninety One",
+                category: "Pro MTB",
+                price: 22999,
+                rating: 4.9,
+                images: {
+                    side: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80",
+                    front: "https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?auto=format&fit=crop&w=800&q=80",
+                    cockpit: "https://images.unsplash.com/photo-1511994298241-608e28f14fde?auto=format&fit=crop&w=800&q=80",
+                    gear: "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&w=800&q=80"
+                },
+                description: "Ninety One (91 Cycles) is India's premium tech-forward cycle brand. High-performance design with superior Shimano components.",
+                specs: { Frame: "Alloy Lightweight", Gears: "21-Speed Shimano Altus", Brakes: "Dual Disc Brakes", Wheels: "29 Inch", Suspension: "Lockout Suspension" }
+            },
+            {
+                id: 8,
+                name: "Firefox Bad Attitude 7 (BA7)",
+                brand: "Firefox",
+                category: "Mountain MTB",
+                price: 24999,
+                rating: 4.9,
+                images: {
+                    side: "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?auto=format&fit=crop&w=800&q=80",
+                    front: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80",
+                    cockpit: "https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?auto=format&fit=crop&w=800&q=80",
+                    gear: "https://images.unsplash.com/photo-1511994298241-608e28f14fde?auto=format&fit=crop&w=800&q=80"
+                },
+                description: "The legendary BA7 by Firefox. A masterpiece for off-road trails with premier geometry and unmatched durability.",
+                specs: { Frame: "Alloy MTB Frame", Gears: "21-Speed Shimano Tourney", Brakes: "Mechanical Disc", Wheels: "27.5 Inch", Suspension: "Zoom Front Suspension" }
+            }
+        ];
+
+        let cart = [];
+        let currentBrandFilter = 'all';
+        let currentZoomLevel = 1;
+
+        // Initialize App on Load
+        window.onload = function() {
+            renderProducts(products);
+            lucide.createIcons();
+        };
+
+        // Render Product Cards
+        function renderProducts(items) {
+            const grid = document.getElementById('product-grid');
+            if (items.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-12 text-slate-500 font-medium">No Indian cycles found matching your search.</div>`;
+                return;
+            }
+
+            grid.innerHTML = items.map(product => `
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-brand-500/50 transition-all flex flex-col group">
+                    <div class="relative overflow-hidden bg-slate-100 h-64">
+                        <img src="${product.images.side}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-brand-700 shadow-sm">${product.brand}</span>
+                        <span class="absolute bottom-4 right-4 bg-slate-900/80 backdrop-blur-md px-2.5 py-1 rounded-lg text-xs font-semibold text-white shadow-sm flex items-center gap-1">
+                            <i data-lucide="eye" class="w-3.5 h-3.5"></i> Multi-Angle View
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between text-xs font-semibold text-slate-500 mb-2">
+                                <span>${product.category}</span>
+                                <span class="flex items-center gap-1 text-amber-500"><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i> ${product.rating}</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">${product.name}</h3>
+                            <p class="text-slate-600 text-sm line-clamp-2 mb-4">${product.description}</p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <span class="text-2xl font-extrabold text-slate-900">₹${product.price.toLocaleString('en-IN')}</span>
+                            <div class="flex gap-2">
+                                <button onclick="openProductModal(${product.id})" class="px-3.5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs transition-colors flex items-center gap-1" title="View Angles & Specs">
+                                    <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> View Details
+                                </button>
+                                <button onclick="addToCart(${product.id})" class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm shadow-md shadow-brand-600/30 transition-all flex items-center gap-1.5">
+                                    <i data-lucide="plus" class="w-4 h-4"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        // Filter by Brand
+        function filterBrand(brand) {
+            currentBrandFilter = brand;
+            document.querySelectorAll('.brand-btn').forEach(btn => {
+                if(btn.textContent.includes(brand) || (brand === 'all' && btn.textContent.includes('All'))) {
+                    btn.className = "brand-btn px-5 py-2.5 rounded-xl font-semibold text-sm whitespace-nowrap bg-brand-600 text-white shadow-md shadow-brand-600/20 transition-all";
+                } else {
+                    btn.className = "brand-btn px-5 py-2.5 rounded-xl font-semibold text-sm whitespace-nowrap bg-white text-slate-700 border border-slate-200 hover:border-brand-500 transition-all";
+                }
+            });
+
+            filterProducts();
+        }
+
+        // Search & Filter combination
+        function filterProducts() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            let filtered = products;
+
+            if (currentBrandFilter !== 'all') {
+                filtered = filtered.filter(p => p.brand.toLowerCase() === currentBrandFilter.toLowerCase());
+            }
+
+            if (query) {
+                filtered = filtered.filter(p => p.name.toLowerCase().includes(query) || p.description.toLowerCase().includes(query) || p.brand.toLowerCase().includes(query));
+            }
+
+            renderProducts(filtered);
+        }
+
+        // Open Product Modal with Multi-Angle Viewer & Zoom In/Out
+        function openProductModal(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+
+            currentZoomLevel = 1;
+
+            let specsHTML = Object.entries(product.specs).map(([k, v]) => `
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+                    <span class="block text-xs font-semibold text-slate-500">${k}</span>
+                    <span class="font-bold text-slate-800 text-sm">${v}</span>
+                </div>
+            `).join('');
+
+            document.getElementById('modal-body').innerHTML = `
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                    <!-- Multi-Angle Image Viewer -->
+                    <div class="space-y-4">
+                        <div class="relative bg-slate-100 rounded-2xl overflow-hidden h-72 sm:h-80 zoom-container flex items-center justify-center">
+                            <img id="active-cycle-img" src="${product.images.side}" alt="${product.name}" class="zoom-img w-full h-full object-cover">
+                            <div class="absolute bottom-3 left-3 bg-black/60 text-white text-xs px-3 py-1 rounded-full backdrop-blur-sm flex items-center gap-1">
+                                <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Click Zoom / Controls below
+                            </div>
+                        </div>
+
+                        <!-- Zoom & Angle Switcher Buttons -->
+                        <div class="flex items-center justify-between bg-slate-50 p-3 rounded-xl border border-slate-200">
+                            <div class="flex gap-2">
+                                <button onclick="switchAngle('${product.images.side}', this)" class="angle-btn active-angle px-3 py-1.5 rounded-lg text-xs font-bold bg-brand-600 text-white shadow">Side View</button>
+                                <button onclick="switchAngle('${product.images.front}', this)" class="angle-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-slate-700 border hover:bg-slate-100">Front View</button>
+                                <button onclick="switchAngle('${product.images.cockpit}', this)" class="angle-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-slate-700 border hover:bg-slate-100">Handlebar</button>
+                                <button onclick="switchAngle('${product.images.gear}', this)" class="angle-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-slate-700 border hover:bg-slate-100">Gear Set</button>
+                            </div>
+                            <div class="flex gap-1.5">
+                                <button onclick="zoomImage(-0.2)" class="p-2 bg-white border rounded-lg hover:bg-slate-100 text-slate-700" title="Zoom Out"><i data-lucide="zoom-out" class="w-4 h-4"></i></button>
+                                <button onclick="zoomImage(0.2)" class="p-2 bg-white border rounded-lg hover:bg-slate-100 text-slate-700" title="Zoom In"><i data-lucide="zoom-in" class="w-4 h-4"></i></button>
+                                <button onclick="resetZoom()" class="p-2 bg-white border rounded-lg hover:bg-slate-100 text-slate-700 text-xs font-bold" title="Reset Zoom">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Details & Specs -->
+                    <div>
+                        <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">${product.brand} - ${product.category}</span>
+                        <h3 class="text-2xl font-extrabold text-slate-900 mt-1 mb-2">${product.name}</h3>
+                        <div class="text-2xl font-extrabold text-brand-600 mb-4">₹${product.price.toLocaleString('en-IN')}</div>
+                        <p class="text-slate-600 text-sm mb-6">${product.description}</p>
+                        
+                        <h4 class="font-bold text-slate-900 mb-3 text-sm">Full Specifications</h4>
+                        <div class="grid grid-cols-2 gap-3 mb-6">${specsHTML}</div>
+
+                        <div class="flex gap-4">
+                            <button onclick="closeProductModal()" class="flex-1 py-3.5 rounded-xl bg-slate-100 font-bold text-slate-700 hover:bg-slate-200">Close</button>
+                            <button onclick="addToCart(${product.id}); closeProductModal(); toggleCart();" class="flex-1 py-3.5 rounded-xl bg-brand-600 text-white font-bold hover:bg-brand-500 shadow-lg shadow-brand-600/30">Add to Cart & View</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.getElementById('product-modal').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function switchAngle(imgUrl, btn) {
+            document.getElementById('active-cycle-img').src = imgUrl;
+            currentZoomLevel = 1;
+            document.getElementById('active-cycle-img').style.transform = `scale(1)`;
+            
+            document.querySelectorAll('.angle-btn').forEach(b => {
+                b.className = "angle-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-slate-700 border hover:bg-slate-100";
+            });
+            btn.className = "angle-btn active-angle px-3 py-1.5 rounded-lg text-xs font-bold bg-brand-600 text-white shadow";
+        }
+
+        function zoomImage(delta) {
+            currentZoomLevel = Math.max(1, Math.min(2.5, currentZoomLevel + delta));
+            document.getElementById('active-cycle-img').style.transform = `scale(${currentZoomLevel})`;
+        }
+
+        function resetZoom() {
+            currentZoomLevel = 1;
+            document.getElementById('active-cycle-img').style.transform = `scale(1)`;
+        }
+
+        function closeProductModal() {
+            document.getElementById('product-modal').classList.add('hidden');
+        }
+
+        // Cart Management
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            drawer.classList.toggle('hidden');
+            renderCartItems();
+        }
+
+        function addToCart(id) {
+            const product = products.find(p => p.id === id);
+            const existing = cart.find(item => item.id === id);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ ...product, qty: 1 });
+            }
+            updateCartBadge();
+            renderCartItems();
+        }
+
+        function updateQuantity(id, change) {
+            const item = cart.find(i => i.id === id);
+            if (item) {
+                item.qty += change;
+                if (item.qty <= 0) {
+                    cart = cart.filter(i => i.id !== id);
+                }
+            }
+            updateCartBadge();
+            renderCartItems();
+        }
+
+        function updateCartBadge() {
+            const badge = document.getElementById('cart-badge');
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            badge.textContent = totalQty;
+            if (totalQty > 0) {
+                badge.classList.remove('scale-0');
+            } else {
+                badge.classList.add('scale-0');
+            }
+        }
+
+        function renderCartItems() {
+            const container = document.getElementById('cart-items-container');
+            const totalEl = document.getElementById('cart-total');
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-16 text-slate-400">
+                        <i data-lucide="shopping-bag" class="w-12 h-12 mx-auto mb-3 opacity-40"></i>
+                        <p class="font-medium">Your cart is empty.</p>
+                    </div>
+                `;
+                totalEl.textContent = '₹0';
+                lucide.createIcons();
+                return;
+            }
+
+            let total = 0;
+            container.innerHTML = cart.map(item => {
+                total += item.price * item.qty;
+                return `
+                    <div class="flex items-center gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                        <img src="${item.images.side}" alt="${item.name}" class="w-16 h-16 object-cover rounded-xl">
+                        <div class="flex-1">
+                            <h4 class="font-bold text-slate-900 text-sm">${item.name}</h4>
+                            <span class="text-brand-600 font-extrabold text-sm">₹${item.price.toLocaleString('en-IN')}</span>
+                            <div class="flex items-center gap-3 mt-2">
+                                <button onclick="updateQuantity(${item.id}, -1)" class="w-7 h-7 bg-white border border-slate-200 rounded-lg flex items-center justify-center font-bold text-slate-700 hover:bg-slate-100">-</button>
+                                <span class="text-sm font-bold">${item.qty}</span>
+                                <button onclick="updateQuantity(${item.id}, 1)" class="w-7 h-7 bg-white border border-slate-200 rounded-lg flex items-center justify-center font-bold text-slate-700 hover:bg-slate-100">+</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            totalEl.textContent = `₹${total.toLocaleString('en-IN')}`;
+            lucide.createIcons();
+        }
+
+        // Checkout Flow
+        function openCheckoutModal() {
+            if (cart.length === 0) return;
+            toggleCart();
+            document.getElementById('checkout-modal').classList.remove('hidden');
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkout-modal').classList.add('hidden');
+        }
+
+        function submitOrder(e) {
+            e.preventDefault();
+            const name = document.getElementById('cust-name').value;
+            closeCheckoutModal();
+            cart = [];
+            updateCartBadge();
+            document.getElementById('order-success-msg').textContent = `Thank you ${name}! Your Indian cycle order has been successfully confirmed and will be delivered shortly.`;
+            document.getElementById('confirmation-modal').classList.remove('hidden');
+            document.getElementById('order-form').reset();
+        }
+
+        function closeConfirmation() {
+            document.getElementById('confirmation-modal').classList.add('hidden');
+        }
+
+        // Service Booking Handler
+        function handleServiceBooking(e) {
+            e.preventDefault();
+            const name = document.getElementById('service-name').value;
+            const type = document.getElementById('service-type').value;
+            const mode = document.getElementById('service-mode').value;
+            
+            document.getElementById('order-success-msg').textContent = `Thank you ${name}! Your repair booking for "${type}" via "${mode}" has been confirmed. Our technician will call you shortly.`;
+            document.getElementById('confirmation-modal').classList.remove('hidden');
+            document.getElementById('service-form').reset();
+        }
+    </script>
+</body>
+</html>
